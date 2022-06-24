@@ -4,10 +4,13 @@ while True:
     if n == 0:
         break
     if n < 0:
-        print("You must enter a positive integer. Please try again")
+        print("You musht enter a positive integer. Please try again.")
         continue
-    print("Factors of", n, ":", end=' ')
-    for i in range(1, n+1):
+    factors = [1, n]
+    for i in range(2, (n//2)+1):
         if n % i == 0:
-            print(i, end=' ')
+            factors.append(i)
+
+            factors = sorted(factors)
+            print("Factors of", n, ":", factors)
             print("\n")
